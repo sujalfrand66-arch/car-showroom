@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Car Showroom</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+</head>
+<body>
+
+<header>
+    <h2>My Car Showroom</h2>
+    <div id="authButtons">
+        <button onclick="openLogin()">Login</button>
+        <button onclick="openRegister()">Register</button>
+        <button id="logoutBtn" onclick="logout()" style="display:none;">Logout</button>
+    </div>
+</header>
+
+<!-- Products -->
+<section class="cars">
+    <div class="car">
+        <h3>BMW M4</h3>
+        <p>Price: ₹85,00,000</p>
+        <button onclick="buyCar('BMW M4')">Purchase</button>
+    </div>
+
+    <div class="car">
+        <h3>Audi R8</h3>
+        <p>Price: ₹2,30,00,000</p>
+        <button onclick="buyCar('Audi R8')">Purchase</button>
+    </div>
+</section>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-box">
+        <h3>Login</h3>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <span onclick="closeModal()">Close</span>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="modal">
+    <div class="modal-box">
+        <h3>Create Account</h3>
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
+        <button onclick="register()">Register</button>
+        <span onclick="closeModal()">Close</span>
+    </div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
